@@ -24,7 +24,7 @@
           <h3>Login</h3>
         </div>
         <div class="card-body">
-          <form>
+          <form action="${pageContext.request.contextPath}/login" method="post">
             <div class="form-group">
               <label for="username">Username</label>
               <input
@@ -33,6 +33,7 @@
                       id="username"
                       name="username"
                       placeholder="Username"
+                      required
               />
             </div>
             <div class="form-group">
@@ -43,18 +44,21 @@
                       id="password"
                       name="password"
                       placeholder="Password"
+                      required
               />
             </div>
+            <% if (request.getAttribute("error") != null) { %>
             <div class="alert alert-danger mt-3">
-              Validation check message
+              <%= request.getAttribute("error") %>
             </div>
+            <% } %>
             <button type="submit" class="btn btn-primary btn-block">
               Login
             </button>
           </form>
 
           <div class="text-left mt-3">
-            <a href="signup.html" class="link-primary">
+            <a href="${pageContext.request.contextPath}/signup.jsp" class="link-primary">
               Don't have any account? Sign up here
             </a>
           </div>

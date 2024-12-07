@@ -24,10 +24,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./login.html">Login</a>
+                <a class="nav-link" href="./login.jsp">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./signup.html">Signup</a>
+                <a class="nav-link" href="./signup.jsp">Signup</a>
             </li>
         </ul>
     </div>
@@ -47,8 +47,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                 <a class="dropdown-item" href="profile.html">Profile</a>
-                <a class="dropdown-item" href="settings.html">Settings</a>
-                <a class="dropdown-item" href="admin/index.html">Admin</a>
+                <a class="dropdown-item" href="settings.jsp">Settings</a>
+                <a class="dropdown-item" href="admin/index.jsp">Admin</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="logout.html">Logout</a>
             </div>
