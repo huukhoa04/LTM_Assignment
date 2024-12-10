@@ -83,34 +83,6 @@
             return null;
         }
 
-        public static List<UserBean> searchUser(String searchType, String searchValue) {
-            List<UserBean> searchResults = new ArrayList<>();
-
-            try (Connection conn = getConnection()) {
-                String sql = "SELECT * FROM user WHERE " + searchType + " LIKE ?";
-                PreparedStatement pstmt = conn.prepareStatement(sql);
-                pstmt.setString(1, "%" + searchValue + "%");
-
-                ResultSet rs = pstmt.executeQuery();
-                while (rs.next()) {
-                    UserBean user = new UserBean();
-                    user.setUserId(rs.getString("UserID"));
-                    user.setUsername(rs.getString("Username"));
-                    user.setPassword(rs.getString("Password"));
-                    user.setEmail(rs.getString("Email"));
-                    user.setPhoneNumber(rs.getString("Phone"));
-                    user.setWork(rs.getString("Work"));
-                    user.setWorkPlace(rs.getString("Workplace"));
-                    user.setAboutMe(rs.getString("Aboutme"));
-                    searchResults.add(user);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return searchResults;
-        }
-
         public static void addUser(UserBean user) {
             try (Connection conn = getConnection()) {
                 String sql = "INSERT INTO user (UserID, Username, Password, Phone, Email, Aboutme, Work, Workplace) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

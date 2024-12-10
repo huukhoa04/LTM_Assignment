@@ -7,10 +7,6 @@ import java.util.List;
 
 public class UserBo {
 
-    public static List<UserBean> searchUser(String searchType, String searchValue){
-        return UserDAO.searchUser(searchType, searchValue);
-    }
-
     public static void addUser(UserBean user)
     {
         UserDAO.addUser(user);

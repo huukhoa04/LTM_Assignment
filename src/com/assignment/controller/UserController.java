@@ -166,20 +166,6 @@ public class UserController extends HttpServlet {
         }
     }
 
-    private void searchUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        String searchType = request.getParameter("searchType");
-        String searchValue = request.getParameter("searchValue");
-
-        if (searchValue != null && !searchValue.trim().isEmpty()) {
-            List<UserBean> searchResults = UserBo.searchUser(searchType, searchValue);
-            request.setAttribute("searchResults", searchResults);
-        }
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/searchnv.jsp");
-        dispatcher.forward(request, response);
-    }
-
     private void validateLogin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username = request.getParameter("username");
